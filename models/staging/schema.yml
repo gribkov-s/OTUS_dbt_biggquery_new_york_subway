@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: stg_trips
+    description: Routes of New York subway
+
+    columns:
+      - name: route_id
+        description: Identifier for a route
+        tests:
+          - not_null
+
+      - name: service_id
+        description: Identifier for a service
+
+      - name: trip_id
+        description: Unique identifier for a trip
+        tests:
+          - unique        
+          - not_null        
+
+      - name: trip_headsign
+        description: Head sign of a trip
+
+      - name: direction_id
+        description: Identifier for a direction
+
+      - name: block_id
+        description: Identifier for a block
+
+      - name: shape_id
+        description: Identifier for a shape
+
+
+  - name: stg_routes
+    description: Trips by New York subway
+
+    columns:
+      - name: route_id
+        description: This is a unique identifier for a route
+        tests:    
+          - unique          
+          - not_null
+
+      - name: route_short_name
+        description: Short name of route
+
+      - name: route_long_name
+        description: Long name of route        
+
+      - name: route_type
+        description: Type of route          
+
+      
+  - name: stg_stop_times
+    description: Time of stops in trips by New York subway
+
+    columns:
+      - name: trip_id
+        description: Identifier for a trip
+        tests:      
+          - not_null
+
+      - name: arrival_time
+        description: Arrival time to stop       
+
+      - name: departure_time
+        description: Departue time from stop      
+
+      - name: stop_id
+        description: Identifier for a stop    
+
+      - name: stop_sequence
+        description: Sequence of a stop 

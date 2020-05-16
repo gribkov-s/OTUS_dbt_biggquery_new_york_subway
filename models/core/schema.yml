@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fact_trips_stops
+    description: Routes of New York subway
+
+    columns:
+      - name: route_id
+        description: Identifier for a route
+
+      - name: service_id
+        description: Identifier for a service
+
+      - name: trip_id
+        description: Unique identifier for a trip       
+
+      - name: direction_id
+        description: Identifier for a direction
+
+      - name: arrival_time
+        description: Arrival time to stop
+
+      - name: departure_time
+        description: Departue time from stop       
+
+      - name: stop_id
+        description: Identifier for a stop    
+
+      - name: stop_sequence
+        description: Sequence of a stop  
+
+
+  - name: dim_routes
+    description: Trips by New York subway
+
+    columns:
+      - name: route_id
+        description: This is a unique identifier for a route
+
+      - name: route_name
+        description: Long name of route        
+
+      - name: route_type
+        description: Type of route     

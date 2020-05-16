@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fact_stops_count
+    description: Stops count in New York subway
+
+    columns:
+
+      - name: route_long_name
+        description: Long name of route        
+
+      - name: route_type
+        description: Type of route 
+
+      - name: stops_count
+        description: Stops count - aggregate function        
+
+
+  - name: fact_trips_lenght
+    description: Average time of stops in New York subway
+
+    columns:
+
+      - name: trip_id
+        description: Identifier for a trip     
+
+      - name: first_stop_id
+        description: Max stop number    
+
+      - name: last_stop_id
+        description: Max stop number         
+ 
+      - name: last_stop_number
+        description: Identifier for a stop 

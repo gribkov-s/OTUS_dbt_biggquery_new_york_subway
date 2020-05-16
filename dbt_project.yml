@@ -1,0 +1,27 @@
+
+name: 'OTUS_dbt_bigquery_new_york_subway'
+version: '1.0.0'
+
+profile: 'OTUS_dbt_bigquery_new_york_subway'
+
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:         
+    - "target"
+    - "dbt_modules"
+
+models:
+  OTUS_dbt_bigquery_new_york_subway:
+  
+      staging:
+          materialized: view
+      core:
+          materialized: table
+      marts:
+          materialized: view     
